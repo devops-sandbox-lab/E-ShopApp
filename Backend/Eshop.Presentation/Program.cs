@@ -16,7 +16,7 @@ using Eshop.Core.Entities;
 using Eshop.Infrastructure;
 using Eshop.Infrastructure.Repositories;
 using ConfigurationManager = Microsoft.Extensions.Configuration.ConfigurationManager;
-
+using Eshop.Presentation.Extensions;
 namespace Eshop.Presentation
 {
     public class Program
@@ -35,14 +35,8 @@ namespace Eshop.Presentation
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
-
-            //Stripe Payment 
-            builder.Services.Configure<StripeSettings>(builder.Configuration.GetSection("Stripe"));
-            builder.Services.AddScoped<StripeService>();
-
-            //Register AutoMapper 
-            builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
-
+            //register services 
+            builder.Services.AddApplicationServices(configuration);
 
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
@@ -62,47 +56,6 @@ namespace Eshop.Presentation
 
 
             builder.Services.AddHttpContextAccessor();
-            //Register All Services && Repos ->
-
-            builder.Services.AddScoped<IAccountRepository, AccountRepository>();
-            builder.Services.AddScoped<IAccountService, AccountService>();
-
-            builder.Services.AddScoped<IAdminRepository, AdminRepository>();
-            builder.Services.AddScoped<IAdminService, AdminService>();
-
-            builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
-
-            builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
-            builder.Services.AddScoped<ICategoryService, CategoryService>();
-
-            builder.Services.AddScoped<IProductRepository, ProductRepository>();
-            builder.Services.AddScoped<IProductService, ProductService>();
-
-            builder.Services.AddScoped<IFavoriteRepository, FavoriteRepository>();
-            builder.Services.AddScoped<IFavoriteService, FavoriteService>();
-
-            builder.Services.AddScoped<ICartItemRepository, CartItemRepository>();
-            builder.Services.AddScoped<ICartRepository, CartRepository>();
-            builder.Services.AddScoped<ICartService, CartService>();
-
-
-           builder.Services.AddScoped<IReviewService,ReviewService>();
-
-            //Map the AppSettings  into the Helper class
-            builder.Services.Configure<JWT>(builder.Configuration.GetSection("JWT"));
-
-            builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("EmailSettings"));
-            builder.Services.AddScoped<IEmailService, EmailService>();
-            builder.Services.AddScoped<IUserOTPRepository, UserOTPRepository>();
-            builder.Services.AddScoped<IUserOTPService, UserOTPService>();
-
-            builder.Services.Configure<GoogleAuthConfig>(builder.Configuration.GetSection("Google"));
-            builder.Services.AddScoped<IGoogleAuthService, GoogleAuthService>();
-
-            builder.Services.AddScoped<IFeatureRepository, FeatureRepository>();
-
-            builder.Services.AddScoped<IOrderRepository, OrderRepository>();
-            builder.Services.AddScoped<IOrderService, OrderService>();
 
             //CORS 
             builder.Services.AddCors(options =>
