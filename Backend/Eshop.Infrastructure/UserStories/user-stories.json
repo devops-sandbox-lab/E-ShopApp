@@ -1,0 +1,27 @@
+{
+  "sellerUserStories": [
+    { "id": 1, "story": "Seller Registration", "description": "As a Seller, I want to register an account so that I can log in and manage my products.", "completed": true },
+    { "id": 2, "story": "Add Product", "description": "As a Seller, I want to add new products with categories and subcategories so that customers can find them.", "completed": true },
+    { "id": 3, "story": "Update Product", "description": "As a Seller, I want to update my product details so that the information is accurate.", "completed": true },
+    { "id": 4, "story": "Delete Product", "description": "As a Seller, I want to delete my products so that they are no longer available for customers.", "completed": false },
+    { "id": 5, "story": "Update Profile", "description": "As a Seller, I want to update my profile information so that it is current.", "completed": true },
+    { "id": 6, "story": "Delete Profile", "description": "As a Seller, I want to delete my profile if I no longer wish to use the platform.", "completed": false },
+    { "id": 7, "story": "Manage Orders", "description": "As a Seller, I want to see new orders in the dashboard, update their status to active or shipped, and mark them as delivered when the customer receives the product.", "completed": false },
+    { "id": 8, "story": "View Order History", "description": "As a Seller, I want to view the history of all orders and the customers who purchased from me.", "completed": false },
+    { "id": 9, "story": "Inventory Management", "description": "As a Seller, I want to manage my inventory levels, set low-stock alerts, and automatically update product availability.", "completed": false },
+    { "id": 10, "story": "Receive Payment", "description": "As a Seller, I want to receive payment for delivered orders.", "completed": false }
+  ],
+  "customerUserStories": [
+    { "id": 1, "story": "View Categories", "description": "As a Customer, I want to see all product categories so that I can choose which one to shop from.", "completed": true },
+    { "id": 2, "story": "Filter Products", "description": "As a Customer, I want to filter products by subcategory, price, and size (for clothes) so that I can find what I need.", "completed": false },
+    { "id": 3, "story": "View Product Details", "description": "As a Customer, I want to view detailed information and images of a product so that I can decide whether to buy it.", "completed": false },
+    { "id": 4, "story": "Add to Cart", "description": "As a Customer, I want to add products to my cart so that I can purchase them all at once.", "completed": false },
+    { "id": 5, "story": "Purchase Products", "description": "As a Customer, I want to purchase all items in my cart and choose a payment method (Visa or cash on delivery).", "completed": false },
+    { "id": 6, "story": "Manage Orders", "description": "As a Customer, I want to see my active orders, confirm receipt of items, and view order history.", "completed": false },
+    { "id": 7, "story": "Edit Profile", "description": "As a Customer, I want to update my profile information so that it is current.", "completed": false },
+    { "id": 8, "story": "View Seller Profile", "description": "As a Customer, I want to view the profiles of sellers and their products.", "completed": false },
+    { "id": 9, "story": "Add Review and Rating", "description": "As a Customer, I want to add reviews and ratings for products I have purchased.", "completed": false },
+    { "id": 10, "story": "Filter by Reviews and Ratings", "description": "As a Customer, I want to filter products based on reviews and ratings.", "completed": false },
+    { "id": 11, "story": "Wishlist", "description": "As a Customer, I want to create wishlists of products I am interested in but not ready to purchase.", "completed": false }
+  ]
+}
